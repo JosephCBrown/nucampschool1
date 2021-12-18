@@ -1,0 +1,32 @@
+import random
+
+high_score = 0
+
+def dice_game():
+    while True:
+        global high_score
+        print("Current high score:", high_score)
+        print("1) Roll Dice")
+        print("2) Leave Game")
+
+        choice = input("Enter your choice:")
+        die = range(1, 7, 1)
+
+        if choice == "1":
+            roll_1 = random.choice(die)
+            print("\nYou roll a...", roll_1)
+            roll_2 = random.choice(die)
+            print("You roll a...", roll_2, "\n")
+            score = roll_1 + roll_2
+            print("You have rolled a total of:", score, "\n")
+            if score > high_score:
+                print("New high score! \n")
+                high_score = score
+            else:
+                print(
+                    "Nice roll! However you have not beaten the high score. Try again! \n")
+        else:
+            print("Goodbye!")
+            break
+
+dice_game()
