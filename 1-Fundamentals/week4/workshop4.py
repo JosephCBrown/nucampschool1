@@ -50,7 +50,7 @@ class BankUser(User):
         print(self.name, "has an account balance of: ", self.balance)
 
     def transfer_money(self, receipent_account, amount):
-        print("You are transferring $"+str(amount),
+        print("\nYou are transferring $"+str(amount),
               " To ", receipent_account.name + ".")
         print("Authentication Required")
         correct_pin = input("Enter your PIN: ")
@@ -66,9 +66,9 @@ class BankUser(User):
             return False
 
     def request_money(self, receipent_account, amount):
-        print("You are requesting $"+str(amount),
+        print("\nYou are requesting $"+str(amount),
               " from ", receipent_account.name + ".")
-        print("Authentication Required")
+        print("Account Authentication Required.....")
         correct_pin = input("Enter your PIN: ")
         if self.pin == correct_pin:
             password = input("Enter your password: ")
@@ -79,7 +79,7 @@ class BankUser(User):
                 receipent_account.balance = receipent_account.balance - amount
                 return True
             else:
-                print("Invalid Pin: Transaction Canceled.")
+                print("Invalid Password: Transaction Canceled.")
                 return False
         else:
             print("Invalid Pin. Transaction cancelled")
@@ -108,19 +108,17 @@ current_user.withdraw(500)
 # current_user.show_balance()"""
 
 """ Driver Code for Task 5 """
+current_user.deposit(5000)
+my_account.show_balance()
+
+current_user.transfer_money(my_account, 1500)
+
+
 current_user.show_balance()
 my_account.show_balance()
 
-current_user.deposit(2000)
 
-current_user.transfer_money(my_account, 200)
-
-my_account.show_balance()
+current_user.request_money(my_account, 500)
 
 current_user.show_balance()
-
-current_user.request_money(my_account, 100)
-
 my_account.show_balance()
-
-current_user.show_balance()
