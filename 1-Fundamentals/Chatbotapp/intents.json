@@ -1,4 +1,4 @@
-{"Intents":[
+{"intents":[
     {
         "tag": "greeting",
         "patterns": [
