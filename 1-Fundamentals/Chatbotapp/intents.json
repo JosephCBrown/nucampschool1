@@ -4,11 +4,7 @@
         "patterns": [
             "Hi",
             "Hey",
-<<<<<<< HEAD
-            "how are you ?",
-=======
-            "how are you",
->>>>>>> e023cc72a295c6d4cabe6097dda61c28b2b80d3f
+            "how are you?",
             "Is anyone there?",
             "Hello"
             
@@ -24,11 +20,7 @@
       "tag": "goodbye",
       "patterns": ["Bye", "See you later", "Goodbye"],
       "responses": [
-<<<<<<< HEAD
         "See you later, thanks for chatting",
-=======
-        "See you later, thanks for visiting",
->>>>>>> e023cc72a295c6d4cabe6097dda61c28b2b80d3f
         "Have a nice day",
         "Bye! Come back again soon.",
         "Thank you for chatting!"
@@ -47,18 +39,13 @@
         "Do you know a joke?"
       ],
       "responses": [
-<<<<<<< HEAD
         "I'm afraid for the calendar. Its days are numbered.",
         "What did the buffalo say when his son left for college? Bison.",
         "My wife said I should do lunges to stay in shape. That would be a big step forward.",
         "Why do fathers take an extra pair of socks when they go golfing?, In case they get a hole in one!",
         "Singing in the shower is fun until you get soap in your mouth. Then it's a soap opera.",
-        "What do you call a fish wearing a bowtie Sofishticated."
-
-=======
-        "Why did the hipster burn his mouth? He drank the coffee before it was cool.",
+        "What do you call a fish wearing a bowtie Sofishticated.",
         "What did the buffalo say when his son left for college? Bison."
->>>>>>> e023cc72a295c6d4cabe6097dda61c28b2b80d3f
       ]
     }
   ]
