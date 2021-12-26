@@ -1,0 +1,52 @@
+{"Intents":[
+    {
+        "tag": "greeting",
+        "patterns": [
+            "Hi",
+            "Hey",
+            "how are you ?",
+            "Is anyone there?",
+            "Hello"
+            
+        ],
+        "responses":[
+        "Hello",
+        "Hey there,",
+        "Hi, What can I do for you?",
+        "Hi, How can I assit you?"
+        ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "See you later", "Goodbye"],
+      "responses": [
+        "See you later, thanks for chatting",
+        "Have a nice day",
+        "Bye! Come back again soon.",
+        "Thank you for chatting!"
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
+      "responses": ["Happy to help!", "Any time!", "My pleasure"]
+    },
+    {
+      "tag": "funny",
+      "patterns": [
+        "Tell me a joke!",
+        "Tell me something funny!",
+        "Do you know a joke?"
+      ],
+      "responses": [
+        "I'm afraid for the calendar. Its days are numbered.",
+        "What did the buffalo say when his son left for college? Bison.",
+        "My wife said I should do lunges to stay in shape. That would be a big step forward.",
+        "Why do fathers take an extra pair of socks when they go golfing?, In case they get a hole in one!",
+        "Singing in the shower is fun until you get soap in your mouth. Then it's a soap opera.",
+        "What do you call a fish wearing a bowtie Sofishticated."
+
+      ]
+    }
+  ]
+}
