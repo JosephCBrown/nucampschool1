@@ -61,11 +61,53 @@ batch_size = 8
 hidden_size = 8
 output_size = len(tags)
 input_size = len(X_train[0])
+learning_rate = 0.001
+num_epochs = 1500
+
+
 """ ----Test that Nueral Network is working---- 
 print(input_size, len(all_words))
 print(output_size,tags) """
 dataset = ChatDatset()
 train_loader = DataLoader(
-    dataset=dataset, batch_size=batch_size, shuffle=True, num_workers=2)  # if trouble set num_workers to 0
+    dataset=dataset, batch_size=batch_size, shuffle=True, num_workers=0)  # if trouble set num_workers to 0
 
-model = NeuralNetwork(input_size, hidden_size, output_size)
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+model = NeuralNetwork(input_size, hidden_size, output_size).to(device)
+
+#loss and optimizer
+criterion = nn.CrossEntropyLoss()
+optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
+
+for epoch in range(num_epochs):
+    for (words, labels) in train_loader:
+        words = words.to(device)
+        labels = labels.to(device)
+
+        # forward
+        outputs = model(words)
+        loss = criterion(outputs, labels)
+
+        # backward and optimizer step
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
+
+    if (epoch+1) % 100 == 0:
+        print(f'Epoch [{epoch+1}/{num_epochs}],Loss:{loss.item():.4f}')
+
+print(f'final loss: {loss.item():.4f}')
+
+data = {
+    "model_state": model.state_dict(),
+    "input_size": input_size,
+    "output_size": output_size,
+    "hidden_size": hidden_size,
+    "all_words": all_words,
+    "tags": tags,
+}
+
+FILE ="data.pth"
+torch.save(data,FILE)
+
+print(f'training complete. file saved to {FILE}')
